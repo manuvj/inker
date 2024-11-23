@@ -1,3 +1,4 @@
+import Footer from "@/components/ui/footer";
 import NavBar from "@/components/ui/nav-bar";
 
 export default function Layout({
@@ -9,6 +10,7 @@ export default function Layout({
     <main className="relative">
       <NavBar />
       {children}
+      <Footer />
     </main>
   );
 }
