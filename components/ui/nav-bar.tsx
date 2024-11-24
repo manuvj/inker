@@ -6,14 +6,14 @@ import Image from "next/image";
 export default function NavBar() {
   const navItems = [
     { name: "Home", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Gallery", href: "#" },
-    { name: "Contact", href: "#" },
-    { name: "Carrer", href: "#" },
+    { name: "About Us", href: "/about" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Carrer", href: "#carrers" },
   ];
 
   return (
-    <header className="z-50 backdrop-blur-xl flex h-20 w-full shrink-0 items-center px-4 md:px-6 absolute top-0 right-0">
+    <header className="z-50 backdrop-blur-xl flex h-20 w-full shrink-0 items-center px-4 md:px-6 fixed top-0 right-0">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden">
