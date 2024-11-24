@@ -24,13 +24,7 @@ export default function NavBar() {
         <SheetContent side="left">
           <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
             {/* <MountainIcon className="h-6 w-6" /> */}
-            <Image
-              src="/logo.png"
-              alt="Acme Inc"
-              width={24}
-              height={24}
-              layout="fixed"
-            />
+            <Image src="/logo.png" alt="Acme Inc" width={24} height={24} />
             <span className="sr-only">Acme Inc</span>
           </Link>
           <div className="grid gap-2 py-6">
@@ -53,7 +47,7 @@ export default function NavBar() {
           alt="Acme Inc"
           width={150}
           height={150}
-          layout="fixed"
+          draggable={false}
         />
       </Link>
       <nav className="ml-auto hidden lg:flex gap-6 font-inter-medium mr-4">

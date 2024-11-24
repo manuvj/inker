@@ -10,7 +10,6 @@ const Hero = () => {
           alt="Acme Inc"
           width={800}
           height={500}
-          layout="fixed"
           draggable={false}
         />
         <h1 className="md:text-5xl text-lg font-orbitron font-bold text-white leading-[0.3rem] ml-4">

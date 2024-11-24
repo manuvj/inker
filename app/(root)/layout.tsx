@@ -1,11 +1,11 @@
 import Footer from "@/components/ui/footer";
 import NavBar from "@/components/ui/nav-bar";
 
-export default function Layout({
-  children,
-}: Readonly<{
+interface LayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <main className="relative">
       <NavBar />
@@ -13,4 +13,6 @@ export default function Layout({
       <Footer />
     </main>
   );
-}
+};
+
+export default Layout;

@@ -1,12 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
 

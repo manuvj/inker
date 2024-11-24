@@ -1,6 +1,5 @@
 import Badge from "@/components/ui/badge";
 import React from "react";
-import { FaUniversity, FaDollarSign, FaHandshake } from "react-icons/fa";
 
 const CollaborationSection = () => {
   const badges = [
@@ -82,7 +81,7 @@ const CollaborationSection = () => {
           <Badge text={badge.text} icon={badge.icon} key={index} />
         ))}
       </div>
-      <div className="md:w-5/6 max-sm:p-8 text-center text-hilight ">
+      <div className="md:w-5/6 max-sm:p-8 text-center text-hilight py-8">
         <p className="font-poppins font-bold text-lg md:text-3xl">
           Partner with India’s first immersive RoboPark and be part of a
           groundbreaking journey in technology and innovation. We are seeking
