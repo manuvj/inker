@@ -50,7 +50,7 @@ export default function NavBar() {
           draggable={false}
         />
       </Link>
-      <nav className="ml-auto hidden lg:flex gap-6 font-inter-medium mr-4">
+      <nav className="ml-auto hidden lg:flex gap-6 font-inter mr-4">
         {navItems.map((item, index) => (
           <Link
             key={index}

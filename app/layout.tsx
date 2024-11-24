@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-// Google font: Inter
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["100", "900"], // Specify the weights you want to include
-});
 
 // Local fonts
 const orbitron = localFont({
@@ -26,6 +18,12 @@ const poppins = localFont({
 const poppinsRegular = localFont({
   src: "./fonts/Poppins-Regular.ttf",
   variable: "--font-poppins-regular",
+  weight: "100 900", // Match the variable weight definition
+});
+
+const inter = localFont({
+  src: "./fonts/Inter-Medium.woff2",
+  variable: "--font-inter",
   weight: "100 900", // Match the variable weight definition
 });
 

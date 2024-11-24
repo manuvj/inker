@@ -58,7 +58,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        "inter-medium": "var(--font-inter)",
+        inter: "var(--font-inter)",
         orbitron: "var(--font-orbitron)",
         poppins: "var(--font-poppins)",
       },
