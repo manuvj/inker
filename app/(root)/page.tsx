@@ -9,7 +9,7 @@ const page = () => {
     <>
       <Hero />
       <IntoductionSection />
-      {/* <PillarSection /> */}
+      <PillarSection />
       <CollaborationSection />
     </>
   );

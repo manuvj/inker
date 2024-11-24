@@ -70,7 +70,7 @@ const CollaborationSection = () => {
     },
   ];
   return (
-    <div className="flex flex-col gap-5 justify-center items-center py-8">
+    <div className="flex flex-col gap-5 justify-center items-center py-16 pt-32">
       <h3 className="text-hilight font-poppins uppercase">
         Collaborations Invitation
       </h3>
@@ -82,8 +82,8 @@ const CollaborationSection = () => {
           <Badge text={badge.text} icon={badge.icon} key={index} />
         ))}
       </div>
-      <div className="md:w-3/4 max-sm:p-8 text-center text-hilight ">
-        <p className="font-poppins font-bold text-lg md:text-xl">
+      <div className="md:w-5/6 max-sm:p-8 text-center text-hilight ">
+        <p className="font-poppins font-bold text-lg md:text-3xl">
           Partner with India’s first immersive RoboPark and be part of a
           groundbreaking journey in technology and innovation. We are seeking
           collaborations across industries, academia, capital partners,
