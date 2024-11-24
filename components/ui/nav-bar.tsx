@@ -1,19 +1,50 @@
+"use client";
+import { useState, useEffect } from "react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function NavBar() {
+  const [scrollDirection, setScrollDirection] = useState("up");
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.scrollY;
+      const direction = scrollY > lastScrollY ? "down" : "up";
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
+      ) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+
+    window.addEventListener("scroll", updateScrollDirection); // Add scroll event listener
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); // Clean up event listener on component unmount
+    };
+  }, [scrollDirection]);
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact Us", href: "/contact" },
-    { name: "Carrer", href: "/career" },
+    { name: "Career", href: "/career" },
   ];
 
   return (
-    <header className="z-50 backdrop-blur-xl flex h-20 w-full shrink-0 items-center px-4 md:px-6 fixed top-0 right-0">
+    <header
+      className={cn(
+        "z-50 backdrop-blur-xl flex h-20 w-full shrink-0 items-center px-4 md:px-6 fixed top-0 right-0 transition-transform duration-500",
+        scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
+      )}
+    >
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden">
@@ -23,7 +54,6 @@ export default function NavBar() {
         </SheetTrigger>
         <SheetContent side="left">
           <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-            {/* <MountainIcon className="h-6 w-6" /> */}
             <Image src="/logo.png" alt="Acme Inc" width={24} height={24} />
             <span className="sr-only">Acme Inc</span>
           </Link>

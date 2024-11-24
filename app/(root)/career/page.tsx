@@ -1,9 +1,16 @@
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import React from "react";
 
 const Page = () => {
   return (
-    <div className="p-32">
-      <div className="max-w-7xl mx-auto p-6 bg-white rounded-md shadow-lg">
+    <div className="py-36">
+      <div
+        style={{
+          boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.1)",
+        }}
+        className="w-[90vw] mx-auto p-20 px-16 bg-white rounded-3xl mb-12"
+      >
         {/* Title and Subtitle */}
         <div className="text-center mb-10">
           <h1 className="capitalize font-orbitron text-6xl font-semibold z-10">
@@ -14,54 +21,36 @@ const Page = () => {
           </h6>
         </div>
 
-        <form className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <form className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-24">
           {/* Left Section: Labels and Inputs */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             {Array(4)
               .fill("")
               .map((_, index) => (
                 <div key={index}>
-                  <label
-                    className="block text-sm font-medium text-gray-600 mb-2"
-                    htmlFor={`input${index}`}
-                  >
-                    Label
-                  </label>
-                  <input
+                  <Label className="font-bold text-base">Lable</Label>
+                  <Input
+                    id="picture"
                     type="text"
-                    id={`input${index}`}
-                    placeholder="Placeholder text"
-                    className="w-full border-b border-gray-300 focus:outline-none focus:border-red-500 text-gray-800 placeholder-gray-400"
+                    className="max-w-sm p-4 h-12 rounded-md ring-1 ring-[#D5D4DC]"
+                    placeholder="placeholder text"
                   />
                 </div>
               ))}
           </div>
 
           {/* Right Section: File Upload and Message */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col justify-end">
             {/* Resume Upload */}
             <div>
-              <label
-                htmlFor="resume"
-                className="block text-sm font-medium text-gray-600 mb-2"
-              >
-                Resume
-              </label>
-              <div className="flex items-center space-x-3">
-                <input
-                  type="file"
-                  id="resume"
-                  className="hidden"
-                  accept=".pdf,.doc,.docx"
-                />
-                <label
-                  htmlFor="resume"
-                  className="px-4 py-2 border border-red-500 text-red-500 rounded-md cursor-pointer hover:bg-red-100"
-                >
-                  Upload
-                </label>
-                <span className="text-sm text-gray-500">PDF/Word format</span>
-              </div>
+              <Label htmlFor="pdf" className="font-bold text-base">
+                Resume{" "}
+              </Label>
+              <Input
+                id="resume"
+                type="file"
+                className="ring-2 ring-hilight max-w-[150px] rounded-md"
+              />
             </div>
 
             {/* Message */}
@@ -81,10 +70,10 @@ const Page = () => {
             </div>
 
             {/* Submit Button */}
-            <div>
+            <div className="flex justify-center md:justify-end">
               <button
                 type="submit"
-                className="w-full lg:w-auto px-6 py-3 bg-red-600 text-white font-medium rounded-md shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                className="w-full md:w-auto px-6 py-3 bg-red-600 text-white font-medium rounded shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
               >
                 Submit
               </button>
