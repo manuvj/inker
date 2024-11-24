@@ -23,24 +23,31 @@ const Page = () => {
   );
 
   return (
-    <div className="p-32 flex flex-col justify-center items-center bg-white">
-      <h1 className="capitalize font-orbitron text-6xl font-semibold z-10">
+    <div className="max-md:py-32 p-4 md:p-16 lg:p-32 flex flex-col justify-center items-center bg-white">
+      <h1 className="capitalize font-orbitron text-3xl md:text-4xl lg:text-6xl font-semibold z-10 text-center">
         contact us
       </h1>
-      <h6 className="text-hilight font-poppins">
+      <h6 className="text-hilight font-poppins text-center px-4">
         Reach out to us! Share your details and let’s get started.
       </h6>
-      <div className="flex gap-8 bg-white shadow-md my-32">
-        <div className="flex flex-col gap-16 bg-black text-white p-8 rounded-xl  w-full max-w-md ">
+      <div
+        style={{
+          boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.1)",
+        }}
+        className="flex flex-col lg:flex-row gap-8 bg-white my-8 md:my-16 lg:my-32 w-full max-w-7xl"
+      >
+        <div className="flex flex-col gap-8 md:gap-32 bg-black text-white p-8 rounded-xl w-full lg:max-w-md relative overflow-hidden">
           {/* Header */}
           <div>
-            <h2 className="text-2xl font-poppins mb-2">Contact Information</h2>
+            <h2 className="text-xl md:text-2xl font-poppins mb-2">
+              Contact Information
+            </h2>
             <p className="text-sm text-[#C9C9C9] mb-6 font-poppins">
               Say something to start a live chat!
             </p>
           </div>
           {/* Contact Details */}
-          <div className="space-y-10">
+          <div className="space-y-6 md:space-y-10">
             {/* Phone */}
             <div className="flex items-center space-x-3">
               <FaPhoneAlt className="text-white" />
@@ -60,7 +67,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="flex space-x-4 mt-12">
+          <div className="flex space-x-4 mt-auto">
             {socialLinks.map((social, index) => (
               <Link
                 key={index}
@@ -77,7 +84,7 @@ const Page = () => {
           <div className="absolute top-2/3 left-2/3 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute top-3/4 right-1/4 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
         </div>
-        <form className="max-w-4xl mx-auto bg-white p-6 pt-12 rounded-xl space-y-6 font-poppins">
+        <form className="w-full max-w-4xl mx-auto bg-white p-4 md:p-6 md:pt-12 rounded-xl space-y-6 font-poppins">
           {/* Row 1: First Name and Last Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -147,7 +154,7 @@ const Page = () => {
             <p className="text-sm text-black font-bold mb-4">
               Select Category?
             </p>
-            <div className="flex items-center space-x-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:space-x-6">
               {[
                 "Academic Collaborations",
                 "Investment Opportunities",
@@ -155,7 +162,7 @@ const Page = () => {
               ].map((category) => (
                 <label
                   key={category}
-                  className="flex items-center space-x-2 text-sm text-nowrap"
+                  className="flex items-center space-x-2 text-sm"
                 >
                   <input
                     type="radio"
@@ -189,10 +196,10 @@ const Page = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-center">
+          <div className="flex justify-center md:justify-end">
             <button
               type="submit"
-              className="px-6 py-3 bg-red-600 text-white font-medium rounded shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              className="w-full md:mr-20 md:w-auto px-6 py-3 bg-red-600 text-white font-medium rounded shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             >
               Submit
             </button>

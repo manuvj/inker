@@ -5,11 +5,11 @@ import Image from "next/image";
 
 export default function NavBar() {
   const navItems = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact Us", href: "/contact" },
-    { name: "Carrer", href: "#carrers" },
+    { name: "Carrer", href: "/career" },
   ];
 
   return (

@@ -3,7 +3,10 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="relative h-screen bg-[url('/heroImage.webp')] bg-cover bg-center">
+    <div
+      id="home"
+      className="relative h-screen bg-[url('/heroImage.webp')] bg-cover bg-center"
+    >
       <div className="absolute top-1/2 -translate-y-3/4 md:left-32 flex flex-col">
         <Image
           src="/heroLogo.webp"
