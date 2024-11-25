@@ -1,4 +1,5 @@
 import Badge from "@/components/ui/badge";
+import Link from "next/link";
 import React from "react";
 
 const CollaborationSection = () => {
@@ -70,15 +71,14 @@ const CollaborationSection = () => {
   ];
   return (
     <div className="flex flex-col gap-5 justify-center items-center py-16 pt-32">
-      <h3 className="text-hilight font-poppins uppercase">
-        Collaborations Invitation
-      </h3>
       <h1 className="font-orbitron font-semibold text-4xl md:text-6xl">
-        Partner with Us{" "}
+        Be a Part of the Future{" "}
       </h1>
-      <div className="md:py-24 py-16 md:pb-20 flex max-sm:flex-col gap-[5vw] w-full justify-center items-center max-sm:px-[4rem]">
+      <div className="md:py-20 py-16 md:pb-12 flex max-sm:flex-col gap-[5vw] w-full justify-center items-center max-sm:px-[4rem]">
         {badges.map((badge, index) => (
-          <Badge text={badge.text} icon={badge.icon} key={index} />
+          <Link href="/contact" key={index}>
+            <Badge text={badge.text} icon={badge.icon} />
+          </Link>
         ))}
       </div>
       <div className="md:w-5/6 max-sm:p-8 text-center text-hilight py-8">

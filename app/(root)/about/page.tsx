@@ -5,21 +5,14 @@ const Page = () => {
   return (
     <div className="relative md:p-32 p-16 flex flex-col justify-center items-center bg-[url('/heroImage.webp')] bg-cover bg-center min-h-screen ">
       <div className="absolute inset-0 bg-white opacity-75"></div>
-      <div className="relative z-50 flex flex-col gap-5 justify-center items-center">
-        <Image
-          src="/bigLogo.webp"
-          alt="Acme Inc"
-          width={800}
-          height={800}
-          className="mb-12"
-        />
+      <div className="relative z-50 flex flex-col gap-5 justify-center items-center mt-20">
         <h1 className="capitalize font-orbitron md:text-6xl text-5xl font-semibold z-10">
           about us
         </h1>
-        <h3 className="font-orbitron md:text-5xl text-3xl text-center underline text-hilight">
+        <h3 className="font-orbitron md:text-5xl text-3xl text-center text-hilight">
           RoboPark: Where Imagination Meets Innovation
         </h3>
-        <div className="md:text-4xl text-xl font-poppins text-center mt-12 flex flex-col gap-10 mb-64 md:w-3/4">
+        <div className="md:text-3xl text-xl font-poppins text-center mt-12 flex flex-col gap-10 mb-20 md:w-3/4">
           <p>
             RoboPark is a pioneering ecosystem designed to bring people and
             technology closer than ever. Built on four interconnected

@@ -9,18 +9,18 @@ import {
   FaLinkedin,
   FaFacebookF,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/app/firebase/config";
+import { AiOutlineYoutube } from "react-icons/ai";
 
 const socialLinks = [
   { icon: <FaFacebookF size={20} />, href: "#", label: "Facebook" },
   { icon: <FaInstagram size={20} />, href: "#", label: "Instagram" },
   { icon: <FaLinkedin size={20} />, href: "#", label: "LinkedIn" },
-  { icon: <FaXTwitter size={20} />, href: "#", label: "Twitter" },
+  { icon: <AiOutlineYoutube size={20} />, href: "#", label: "Youtube" },
 ];
 
 const schema = z.object({
@@ -94,13 +94,7 @@ const Page = () => {
             {/* Email */}
             <div className="flex items-center space-x-3">
               <FaEnvelope className="text-white" />
-              <span>info@inkerrobotics.com@houzing.com</span>
-            </div>
-
-            {/* Address */}
-            <div className="flex items-center space-x-3">
-              <FaMapMarkerAlt className="text-white" />
-              <span>Address</span>
+              <span>info@robopark.in</span>
             </div>
           </div>
 

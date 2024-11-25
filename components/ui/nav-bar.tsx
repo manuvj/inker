@@ -53,7 +53,7 @@ export default function NavBar() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
-          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+          <Link href="/" className="mr-6 hidden lg:flex" prefetch={false}>
             <Image src="/logo.png" alt="Acme Inc" width={24} height={24} />
             <span className="sr-only">Acme Inc</span>
           </Link>
@@ -71,7 +71,7 @@ export default function NavBar() {
           </div>
         </SheetContent>
       </Sheet>
-      <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+      <Link href="/" className="mr-6 hidden lg:flex" prefetch={false}>
         <Image
           src="/logo.webp"
           alt="Acme Inc"

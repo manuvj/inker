@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
+import { AiOutlineYoutube } from "react-icons/ai";
+import { MdPhone, MdEmail } from "react-icons/md";
 
 const Footer = () => {
   const socialLinks = [
     { icon: <FaFacebookF size={20} />, href: "#", label: "Facebook" },
     { icon: <FaInstagram size={20} />, href: "#", label: "Instagram" },
     { icon: <FaLinkedin size={20} />, href: "#", label: "LinkedIn" },
-    { icon: <FaXTwitter size={20} />, href: "#", label: "Twitter" },
+    { icon: <AiOutlineYoutube size={20} />, href: "#", label: "Youtube" },
   ];
 
   const quickLinks = [
@@ -22,7 +22,6 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: <MdLocationOn size={20} />, text: "Address", href: "#" },
     {
       icon: <MdPhone size={20} />,
       text: "+91 90615 00800",
@@ -30,8 +29,8 @@ const Footer = () => {
     },
     {
       icon: <MdEmail size={20} />,
-      text: "info@inkerrobotics.com@houzing.com",
-      href: "mailto:info@inkerrobotics.com@houzing.com",
+      text: "info@robopark.in",
+      href: "mailto:info@robopark.in",
     },
   ];
 
@@ -61,7 +60,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex gap-8 w-1/2 justify-between max-md:flex-col">
+          <div className="flex gap-8 w-[40%] justify-between max-md:flex-col">
             {/* Quick Links */}
             <div>
               <h3 className="text-lg font-semibold mb-4 text-nowrap">
@@ -106,15 +105,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-4 border-t border-white flex flex-col md:flex-row justify-between items-center text-sm text-white">
           <p>© Inker Robotics 2024</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-white transition-colors">
-              Terms of Use
-            </Link>
-            <span>|</span>
-            <Link href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-          </div>
+          <div className="flex space-x-4 mt-4 md:mt-0"></div>
         </div>
       </div>
     </footer>

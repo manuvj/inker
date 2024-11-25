@@ -60,10 +60,10 @@ const PillarSection = () => {
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
 
             <div className="absolute top-3 left-3 flex flex-col z-50">
-              <h1 className="p-4 font-orbitron text-white text-3xl font-bold underline">
+              <h1 className="p-4 font-orbitron text-white text-3xl font-bold">
                 {feature.name}
               </h1>
-              <p className="p-4 text-white md:text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <p className="p-4 text-white md:text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 {feature.des}
               </p>
             </div>

@@ -128,7 +128,7 @@ const Page = () => {
                 id="resume"
                 type="file"
                 {...register("resume")}
-                className="ring-2 ring-hilight max-w-[150px] rounded-md"
+                className="ring-2 ring-hilight max-w-[250px] rounded-md"
               />
               {errors.resume && (
                 <p className="text-red-500 text-sm mt-1">
