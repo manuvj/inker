@@ -1,4 +1,5 @@
 import Badge from "@/components/ui/badge";
+import SplitText from "@/components/ui/split-text";
 import Link from "next/link";
 import React from "react";
 
@@ -81,14 +82,15 @@ const CollaborationSection = () => {
           </Link>
         ))}
       </div>
-      <div className="md:w-5/6 max-sm:p-8 text-center text-hilight py-8">
-        <p className="font-poppins font-bold text-lg md:text-3xl">
-          Partner with India’s first immersive RoboPark and be part of a
+      <div className="flex justify-center items-center max-sm:p-8 text-center text-hilight py-8">
+        <SplitText
+          className="font-poppins font-bold text-lg md:text-3xl"
+          text="Partner with India’s first immersive RoboPark and be part of a
           groundbreaking journey in technology and innovation. We are seeking
           collaborations across industries, academia, capital partners,
           merchandise, and strategic alliances to create a dynamic space that
-          fosters learning, exploration, and creativity.
-        </p>
+          fosters learning, exploration, and creativity."
+        />
       </div>
     </div>
   );
