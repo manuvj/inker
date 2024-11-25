@@ -4,7 +4,6 @@ import React from "react";
 import {
   FaPhoneAlt,
   FaEnvelope,
-  FaMapMarkerAlt,
   FaInstagram,
   FaLinkedin,
   FaFacebookF,
