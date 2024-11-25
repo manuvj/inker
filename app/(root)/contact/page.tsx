@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -10,17 +10,54 @@ import {
   FaFacebookF,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-const Page = () => {
-  const socialLinks = [
-    { icon: <FaFacebookF size={20} />, href: "#", label: "Facebook" },
-    { icon: <FaInstagram size={20} />, href: "#", label: "Instagram" },
-    { icon: <FaLinkedin size={20} />, href: "#", label: "LinkedIn" },
-    { icon: <FaXTwitter size={20} />, href: "#", label: "Twitter" },
-  ];
+import { useForm, SubmitHandler } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/app/firebase/config";
 
-  const [selectedCategory, setSelectedCategory] = useState(
-    "Academic Collaborations"
-  );
+const socialLinks = [
+  { icon: <FaFacebookF size={20} />, href: "#", label: "Facebook" },
+  { icon: <FaInstagram size={20} />, href: "#", label: "Instagram" },
+  { icon: <FaLinkedin size={20} />, href: "#", label: "LinkedIn" },
+  { icon: <FaXTwitter size={20} />, href: "#", label: "Twitter" },
+];
+
+const schema = z.object({
+  firstName: z.string().min(1, "First Name is required"),
+  lastName: z.string().min(1, "Last Name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(1, "Phone Number is required"),
+  category: z.enum([
+    "Academic Collaborations",
+    "Investment Opportunities",
+    "Partnerships & Associations",
+  ]),
+  message: z.string().min(1, "Message is required"),
+});
+
+type FormData = z.infer<typeof schema>;
+
+const Page = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    try {
+      const docRef = await addDoc(collection(db, "contacts"), data);
+      console.log("Document written with ID: ", docRef.id);
+      alert("Form submitted successfully!");
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      alert("Error submitting form. Please try again.");
+    }
+    // console.log("Form data", data);
+  };
 
   return (
     <div className="max-md:py-32 p-4 md:p-16 lg:p-32 flex flex-col justify-center items-center bg-white">
@@ -84,7 +121,10 @@ const Page = () => {
           <div className="absolute top-2/3 left-2/3 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute top-3/4 right-1/4 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
         </div>
-        <form className="w-full max-w-4xl mx-auto bg-white p-4 md:p-6 md:pt-12 rounded-xl space-y-6 font-poppins">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full max-w-4xl mx-auto bg-white p-4 md:p-6 md:pt-12 rounded-xl space-y-6 font-poppins"
+        >
           {/* Row 1: First Name and Last Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -97,9 +137,14 @@ const Page = () => {
               <input
                 type="text"
                 id="firstName"
-                name="firstName"
+                {...register("firstName")}
                 className="w-full border-b border-gray-300 focus:outline-none focus:border-red-500 text-gray-800"
               />
+              {errors.firstName && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.firstName.message}
+                </p>
+              )}
             </div>
             <div>
               <label
@@ -111,9 +156,14 @@ const Page = () => {
               <input
                 type="text"
                 id="lastName"
-                name="lastName"
+                {...register("lastName")}
                 className="w-full border-b border-gray-300 focus:outline-none focus:border-red-500 text-gray-800"
               />
+              {errors.lastName && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.lastName.message}
+                </p>
+              )}
             </div>
           </div>
 
@@ -129,9 +179,14 @@ const Page = () => {
               <input
                 type="email"
                 id="email"
-                name="email"
+                {...register("email")}
                 className="w-full border-b border-gray-300 focus:outline-none focus:border-red-500 text-gray-800"
               />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
             <div>
               <label
@@ -143,9 +198,14 @@ const Page = () => {
               <input
                 type="tel"
                 id="phone"
-                name="phone"
+                {...register("phone")}
                 className="w-full border-b border-gray-300 focus:outline-none focus:border-red-500 text-gray-800"
               />
+              {errors.phone && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.phone.message}
+                </p>
+              )}
             </div>
           </div>
 
@@ -159,22 +219,25 @@ const Page = () => {
                 "Academic Collaborations",
                 "Investment Opportunities",
                 "Partnerships & Associations",
-              ].map((category) => (
+              ].map((categoryOption) => (
                 <label
-                  key={category}
+                  key={categoryOption}
                   className="flex items-center space-x-2 text-sm"
                 >
                   <input
                     type="radio"
-                    name="category"
-                    value={category}
-                    checked={selectedCategory === category}
-                    onChange={() => setSelectedCategory(category)}
+                    {...register("category")}
+                    value={categoryOption}
                     className="form-radio text-red-600 focus:ring-red-500"
                   />
-                  <span className="text-gray-800">{category}</span>
+                  <span className="text-gray-800">{categoryOption}</span>
                 </label>
               ))}
+              {errors.category && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.category.message}
+                </p>
+              )}
             </div>
           </div>
 
@@ -188,11 +251,16 @@ const Page = () => {
             </label>
             <textarea
               id="message"
-              name="message"
+              {...register("message")}
               rows={4}
               placeholder="Write your message.."
               className="w-full border-b border-gray-300 focus:outline-none focus:border-red-500 text-gray-800"
             />
+            {errors.message && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.message.message}
+              </p>
+            )}
           </div>
 
           {/* Submit Button */}
