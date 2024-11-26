@@ -72,15 +72,15 @@ const Page = () => {
         }}
         className="flex flex-col lg:flex-row gap-8 bg-white my-8 md:my-16 lg:my-32 w-full max-w-7xl"
       >
-        <div className="flex flex-col gap-8 md:gap-32 bg-black text-white p-8 rounded-xl w-full lg:max-w-md relative overflow-hidden">
+        <div className="flex flex-col gap-8 md:gap-48 bg-black text-white p-8 rounded-xl w-full lg:max-w-md relative overflow-hidden">
+          {/* circles */}
+          <div className="rounded-full absolute bottom-0 right-0 bg-[#FFF9F9] opacity-10 h-64 translate-x-[25%] translate-y-[25%] w-64 "></div>
+          <div className="rounded-full absolute bottom-32 right-32 bg-[#FFF9F9] opacity-10 h-36 translate-x-[25%] translate-y-[25%] w-36 "></div>
           {/* Header */}
           <div>
             <h2 className="text-xl md:text-2xl font-poppins mb-2">
               Contact Information
             </h2>
-            <p className="text-sm text-[#C9C9C9] mb-6 font-poppins">
-              Say something to start a live chat!
-            </p>
           </div>
           {/* Contact Details */}
           <div className="space-y-6 md:space-y-10">
@@ -96,7 +96,6 @@ const Page = () => {
               <span>info@robopark.in</span>
             </div>
           </div>
-
           <div className="flex space-x-4 mt-auto">
             {socialLinks.map((social, index) => (
               <Link
@@ -109,7 +108,6 @@ const Page = () => {
               </Link>
             ))}
           </div>
-
           {/* Background Overlays */}
           <div className="absolute top-2/3 left-2/3 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute top-3/4 right-1/4 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>

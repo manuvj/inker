@@ -12,11 +12,12 @@ const PillarSection = () => {
         "aspect-square md:aspect-auto md:row-span-6 md:col-span-2 md:col-start-1 md:row-start-1 md:h-[600px]",
     },
     {
-      name: "Techknowledge",
+      name: "Inkubator",
+
       des: "Empowering freshers, professionals, and entrepreneurs with future-focused skills, Techknowledge Academy blends cutting-edge technology and hands-on learning. This hub is your gateway to upskilling, reskilling, and thriving in a tech-driven world. Share knowledge. Build futures. Innovate here.",
       background: "/grid/grid2.webp",
       className:
-        "aspect-square md:aspect-auto md:col-span-4 md:row-span-4 md:h-[360px]",
+        "aspect-square md:aspect-auto md:col-start-5 md:row-start-1 md:col-span-2 md:row-span-3 md:h-[300px]",
     },
     {
       name: "Futuristech",
@@ -26,11 +27,13 @@ const PillarSection = () => {
         "aspect-square md:aspect-auto md:col-start-3 md:row-start-1 md:col-span-2 md:row-span-3 md:h-[300px]",
     },
     {
-      name: "Inkubator",
+      name: "Techknowledge",
+
       des: "Designed to help entrepreneurs and innovators bring their ideas to market. With structured incubation programs, expert mentorship, and access to advanced prototyping labs, it offers a comprehensive support system. The state-of-the-art infrastructure and technology make it a cost-effective solution for startups, reducing capital requirements and providing the best incubator experience.",
       background: "/grid/grid4.webp",
+
       className:
-        "aspect-square md:aspect-auto md:col-start-5 md:row-start-1 md:col-span-2 md:row-span-3 md:h-[300px]",
+        "aspect-square md:aspect-auto md:col-span-4 md:row-span-4 md:h-[360px]",
     },
   ];
   return (
@@ -46,7 +49,7 @@ const PillarSection = () => {
           <div
             key={index}
             className={cn(
-              "group overflow-hidden rounded-lg relative filter saturate-50 hover:saturate-100 transition-all duration-300",
+              "group overflow-hidden rounded-lg relative  transition-all duration-300",
               feature.className
             )}
           >
