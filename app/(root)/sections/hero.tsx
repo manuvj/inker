@@ -32,11 +32,12 @@ const Hero = () => {
           width={800}
           height={500}
           draggable={false}
+          className="w-full max-w-xs md:max-w-none"
         />
-        <h1 className="md:text-5xl text-lg font-orbitron font-bold text-white leading-[0.3rem] ml-4">
+        <h1 className="md:text-5xl text-2xl font-orbitron font-bold text-white leading-[0.3rem] max-sm:leading-none ml-4 overflow-clip">
           {"A Hub for Futuristic Technologies".split(" ").map((word, index) => {
             return (
-              <span key={index} className="overflow-clip inline-block mr-2">
+              <span key={index} className="inline-block mr-2 h-full">
                 {word.split("").map((letter, index) => {
                   return (
                     <span className="char inline-block" key={index}>
