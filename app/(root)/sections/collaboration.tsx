@@ -72,9 +72,10 @@ const CollaborationSection = () => {
   ];
   return (
     <div className="flex flex-col gap-5 justify-center items-center py-16 pt-32">
-      <h1 className="font-orbitron font-semibold text-4xl md:text-6xl">
-        Be a Part of the Future{" "}
-      </h1>
+      <SplitText
+        text="Be a Part of the Future"
+        className="font-orbitron font-semibold text-4xl md:text-6xl"
+      ></SplitText>
       <div className="md:py-20 py-16 md:pb-12 flex max-sm:flex-col gap-[5vw] w-full justify-center items-center max-sm:px-[4rem]">
         {badges.map((badge, index) => (
           <Link href="/contact" key={index}>
@@ -84,7 +85,7 @@ const CollaborationSection = () => {
       </div>
       <div className="flex justify-center items-center max-sm:p-8 text-center text-hilight py-8">
         <SplitText
-          className="font-poppins font-bold text-lg md:text-3xl"
+          className="font-poppins font-bold text-lg md:text-3xl w-5/6"
           text="Partner with India’s first immersive RoboPark and be part of a
           groundbreaking journey in technology and innovation. We are seeking
           collaborations across industries, academia, capital partners,

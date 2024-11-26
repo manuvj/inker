@@ -38,17 +38,17 @@ const SplitText = ({
     <p
       ref={ref}
       className={cn(
-        "text-center font-bold md:text-3xl text-lg font-poppins lg:w-5/6",
+        "text-center font-bold md:text-3xl text-lg font-poppins ",
         className
       )}
     >
       {text.split(" ").map((word, index) => {
         return (
-          <span key={index} className="overflow-clip inline-block">
+          <span key={index} className="overflow-clip inline-block mr-2">
             {word.split("").map((letter, index) => {
               return (
                 <span className="char inline-block" key={index}>
-                  {letter}
+                  {letter}{" "}
                 </span>
               );
             })}{" "}

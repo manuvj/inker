@@ -90,7 +90,7 @@ export default function NavBar() {
           <Link
             key={index}
             href={item.href}
-            className="group text-lg inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 font-inter-medium hover:text-hilight"
+            className="group text-lg inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 font-inter-medium hover:text-hilight hover:underline underline-offset-4"
             prefetch={false}
           >
             {item.name}

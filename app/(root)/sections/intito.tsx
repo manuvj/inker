@@ -3,8 +3,9 @@ import SplitText from "@/components/ui/split-text";
 
 const IntoductionSection = () => {
   return (
-    <div className="md:p-32 p-8 max-sm:py-16 flex justify-center items-center relative ">
+    <div className="md:p-32 p-8 max-sm:py-16 flex justify-center items-center relative">
       <SplitText
+        className="w-5/6"
         staggerAmount={0.6}
         text="India’s first immersive robotics ecosystem, dedicated to advancing
         education, innovation, and industry in Thrissur, Kerala.RoboPark serves as a catalyst for
