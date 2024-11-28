@@ -14,7 +14,6 @@ const schema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(1, "Phone Number is required"),
-  resume: z.any().refine((file) => file?.length > 0, "Resume is required"),
   message: z.string().min(1, "Message is required"),
 });
 
@@ -127,15 +126,12 @@ const Page = () => {
               <Input
                 id="resume"
                 type="file"
-                {...register("resume")}
-                className="ring-2 ring-hilight max-w-[250px] rounded-md"
+                disabled
+                className="ring-2 ring-gray-300 max-w-[250px] rounded-md cursor-not-allowed opacity-50"
               />
-              {errors.resume && (
-                <p className="text-red-500 text-sm mt-1">
-                  {typeof errors.resume.message === "string" &&
-                    errors.resume.message}
-                </p>
-              )}
+              <p className="text-sm text-gray-500 mt-1">
+                Resume upload is temporarily disabled
+              </p>
             </div>
 
             {/* Message */}
