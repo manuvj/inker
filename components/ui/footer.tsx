@@ -7,10 +7,26 @@ import { MdPhone, MdEmail } from "react-icons/md";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <FaFacebookF size={20} />, href: "#", label: "Facebook" },
-    { icon: <FaInstagram size={20} />, href: "#", label: "Instagram" },
-    { icon: <FaLinkedin size={20} />, href: "#", label: "LinkedIn" },
-    { icon: <AiOutlineYoutube size={20} />, href: "#", label: "Youtube" },
+    {
+      icon: <FaFacebookF size={20} />,
+      href: "https://www.facebook.com/inkerrobotics/",
+      label: "Facebook",
+    },
+    {
+      icon: <FaInstagram size={20} />,
+      href: "https://www.instagram.com/inkerrobotics/",
+      label: "Instagram",
+    },
+    {
+      icon: <FaLinkedin size={20} />,
+      href: "https://www.linkedin.com/company/inkerrobotics/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <AiOutlineYoutube size={20} />,
+      href: "http://www.youtube.com/@InkerRobotics",
+      label: "Youtube",
+    },
   ];
 
   const quickLinks = [
