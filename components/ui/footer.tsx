@@ -14,11 +14,11 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { text: "Home", href: "#" },
-    { text: "Gallery", href: "#" },
-    { text: "About Us", href: "#" },
-    { text: "Contact Us", href: "#" },
-    { text: "Career", href: "#" },
+    { text: "Home", href: "/" },
+    { text: "About Us", href: "/about" },
+    { text: "Gallery", href: "/gallery" },
+    { text: "Contact Us", href: "/contact" },
+    { text: "Career", href: "/career" },
   ];
 
   const contactInfo = [
