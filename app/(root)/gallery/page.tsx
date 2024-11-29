@@ -37,7 +37,7 @@ const Page = () => {
               delay: 2000,
             }),
           ]}
-          className="w-full px-4 md:px-8 lg:px-24"
+          className="w-full px-4 md:px-8 lg:px-24 lg:w-5/6"
           orientation={isMobile ? "vertical" : "horizontal"}
         >
           <CarouselContent>
