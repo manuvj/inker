@@ -23,18 +23,20 @@ const Hero = () => {
     <div
       ref={ref}
       id="home"
-      className="relative h-screen bg-[url('/heroImage.webp')] bg-cover bg-center"
+      className="relative h-screen bg-[url('/heroImage.png')] bg-cover bg-center overflow-hidden"
     >
-      <div className="absolute top-1/2 -translate-y-3/4 md:left-32 flex flex-col">
+      <div className="absolute w-full h-full bg-white/15"></div>
+      <div className=" bg-gradient-to-t from-white from-60% to-[rgba(0,0,0,0)] blur-md h-28 w-[calc(100%+25px)] absolute -translate-x-3 translate-y-6 bottom-0 left-0"></div>
+      <div className="absolute top-[60%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center">
         <Image
           src="/heroLogo.webp"
           alt="Acme Inc"
-          width={800}
-          height={500}
+          width={600}
+          height={300}
           draggable={false}
-          className="w-full max-w-xs md:max-w-none"
+          className=""
         />
-        <h1 className="md:text-5xl text-2xl font-orbitron font-bold text-white leading-[0.3rem] max-sm:leading-none ml-4 overflow-clip">
+        <h1 className="md:text-3xl text-2xl font-orbitron font-bold text-white leading-[0.3rem] max-sm:leading-none ml-4 overflow-clip">
           {"A Hub for Futuristic Technologies".split(" ").map((word, index) => {
             return (
               <span key={index} className="inline-block mr-2 h-full">

@@ -42,7 +42,7 @@ export default function NavBar() {
   return (
     <header
       className={cn(
-        "z-[999999] backdrop-blur-xl flex h-20 w-full shrink-0 items-center px-4 md:px-6 fixed top-0 right-0 transition-transform duration-500",
+        "z-[999999] backdrop-blur-xl bg-[#FDFDFD]/20 flex h-20 w-full shrink-0 items-center px-4 md:px-6 fixed top-0 right-0 transition-transform duration-500",
         scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
       )}
     >
